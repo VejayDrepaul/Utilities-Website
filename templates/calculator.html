@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block calculator %}
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/calc-style.css') }}">
+    <div class="title">
+        <h1>Calculator</h1>
+    </div>
+    <div class="calculator-style">
+            <input id="input-box" type="text" placeholder="">
+            <input id="result-box" type="text" placeholder="0">
+            <br>
+            <button class="trig" onclick="sin()">sin</button>
+            <button class="trig" onclick="cos()">cos</button>
+            <button class="trig" onclick="tan()">tan</button>
+            <button class="trig" id="clear" onclick="clearDisplay()">C</button>
+            <button class="trig numbers" id="num7" onclick="display('7')">7</button>
+            <button class="trig numbers" id="num8" onclick="display('8')">8</button>
+            <button class="trig numbers" id="num9" onclick="display('9')">9</button>
+            <button class="triarithmetic-operators" id="add" onclick="display('+')">+</button>
+            <button>Back</button>
+            <br>
+            <button class="trig" onclick="sinInverse()">sin<sup>-1</sup></button>
+            <button class="trig" onclick="cosInverse()">cos<sup>-1</sup></button>
+            <button class="trig" onclick="tanInverse()">tan<sup>-1</sup></button>
+            <button onclick="display(Math.PI)">π</button>
+            <button onclick="display(Math.E)">e</button>
+            <button class="numbers" id="num4" onclick="display('4')">4</button>
+            <button class="numbers" id="num5" onclick="display('5')">5</button>
+            <button class="numbers" id="num6" onclick="display('6')">6</button>
+            <button class="arithmetic-operators" id="sub" onclick="display('-')">-</button>
+            <button>ANS</button>
+            <br>
+            <button class="exponents" onclick="display('**')">x<sup>y</sup></button>
+            <button class="exponents" onclick="cube()">x<sup>3</sup></button>
+            <button class="exponents" onclick="square()">x<sup>2</sup></button>
+            <button class="exponents" onclick="ePower()">e<sup>x</sup></button>
+            <button class="exponents" onclick="powerOfTen()">10<sup>x</sup></button>
+            <button class="numbers" id="num1" onclick="display('1')">1</button>
+            <button class="numbers" id="num2" onclick="display('2')">2</button>
+            <button class="numbers" id="num3" onclick="display('3')">3</button>
+            <button class="arithmetic-operators" id="multiply" onclick="display('*')">x</button>
+            <button>M+</button>
+            <br>
+            <button class="roots"><sup>y</sup>√x</button>
+            <button class="roots" onclick="cubeRoot()"><sup>3</sup>√x</button>
+            <button class="roots" onclick="sqrt()">√x</button>
+            <button class="roots">ln</button>
+            <button class="roots">log</button>
+            <button id="dot" onclick="display('.')">.</button>
+            <button class="numbers" id="num0" onclick="display('0')">0</button>
+            <button>SN</button>
+            <button class="arithmetic-operators" id="divide" onclick="display('/')">/</button>
+            <button>M-</button>
+            <br>
+            <button onclick="display('(')">(</button>
+            <button onclick="display(')')">)</button>
+            <button onclick="oneDividedX()">1/x</button>
+            <button onclick="percent()">%</button>
+            <button onclick="factorial()">n!</button>
+            <button id="plus-minus" onclick="display('-')">±</button>
+            <button class="random" onclick="random()">RND</button>
+            <button class="arithmetic-operators" id="equal" onclick="solve()">=</button>
+            <button>MR</button>
+    </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='script/calc.js') }}"></script>
+{% endblock %}
