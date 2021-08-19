@@ -1,5 +1,36 @@
+const keyCodes = [48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 61, 173, 191];
+
+document.addEventListener('keydown', (event) => {
+    let keyPress = String.fromCharCode(event.keyCode);
+    if (event.shiftKey && event.keyCode === 56) {
+        document.getElementById('input-box').value += '*';
+    } else if (event.shiftKey && event.keyCode === 61) {
+        document.getElementById('input-box').value += '+';
+    } else if (event.shiftKey && event.keyCode === 191) {
+        document.getElementById('input-box').value = '/';
+    } else if (keyCodes.includes(event.keyCode)) {
+        document.getElementById('input-box').value += keyPress;
+    }
+});
+/*document.onkeydown = function(event) {
+    var key_press = String.fromCharCode(event.keyCode);
+    if (keyCodes.includes(event.keyCode)) {
+        document.getElementById('input-box').value += key_press;
+    } else if (event.shiftKey && event.keyCode == 56){
+        console.log('*');
+    } else {
+        document.getElementById('input-box').value += "";
+    }
+}*/
+
 function display(value) {
     document.getElementById('input-box').value += value;
+}
+
+function back() {
+    originalString = document.getElementById('input-box').value;
+    lastChar = originalString.slice(0, originalString.length - 1);
+    document.getElementById('input-box').value = lastChar;
 }
 
 function clearDisplay() {
@@ -7,11 +38,16 @@ function clearDisplay() {
     document.getElementById('result-box').value = "";
 }
 
+function clearEntry() {
+    document.getElementById('input-box').value = "";
+}
+
 function solve() {
     let x = document.getElementById('input-box').value;
     display('=');
     let y = eval(x);
     document.getElementById('result-box').value = y;
+    document.getElementById('input-box').value = "";
 }
 
 function sin() {
@@ -109,8 +145,28 @@ function oneDividedX() {
     document.getElementById('input-box').value = ans;
 }
 
+
 function ePower() {
     let num = document.getElementById('input-box').value;
     let ans = Math.pow(Math.E, num);
     document.getElementById('input-box').value = ans;
+}
+
+function plusMinus() {
+    let val = document.getElementById('input-box').value;
+    val = "-" + val;
+    document.getElementById('input-box').value = "";
+    document.getElementById('input-box').value += val;
+}
+
+var savedNumer;
+function memoryAdd() {
+    savedNumer = document.getElementById('result-box').value;
+}
+
+function memoryDelete() {
+    savedNumer = 0;
+}
+function memoryRecover() {
+    document.getElementById('input-box').value += savedNumer;
 }
