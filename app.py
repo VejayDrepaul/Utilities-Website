@@ -19,9 +19,7 @@ def dictionary():
         d = c['definitions']
         e = d[0]
         f = e['definition']
-        #return redirect(url_for("word_test", word=f))
-
-        return render_template("dictionary.html", definition=f)
+        return render_template("dictionary.html", definition=f, defi=defi)
     return render_template("dictionary.html")
 
 @app.route("/<word>")
