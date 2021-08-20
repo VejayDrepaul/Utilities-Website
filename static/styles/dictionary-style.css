@@ -3,3 +3,18 @@
     height: 100px;
     margin: 0 auto;
 }
+
+.word-sound p{
+    display: inline;
+    vertical-align: top;
+    font-size: 30px;
+    line-height: 40px;
+}
+
+.word-sound button{
+    height: 40px;
+    display: inline;
+    vertical-align: top;
+    font-size: 16px;
+    line-height: 28px;
+}

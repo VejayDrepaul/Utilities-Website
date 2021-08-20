@@ -10,7 +10,11 @@
                 <input type="text" class="form-control" name="word" placeholder="Enter Word Here">
                 <button type="submit" value="submit" class="btn btn-primary" name="enter">Enter</button>
             </div>
-            <p>Word: {{defi}}</p>
+            <div class="word-sound">
+                <button class="btn btn-warning" type="sound" name="sound"><img src="{{ url_for('static', filename='img/speaker.png') }}" width="20" height="20"></button>
+                <p>{{defi}}</p>
+            </div>
+            <br>
             <ol>
                 <li>{{definition}}</li>
             </ol>
