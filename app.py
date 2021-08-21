@@ -11,7 +11,7 @@ def home():
 def dictionary():
     if request.method == "POST":
         defi = request.form["word"]
-        api_url = f' https://api.dictionaryapi.dev/api/v2/entries/en/{defi}'
+        api_url = f'https://api.dictionaryapi.dev/api/v2/entries/en/{defi}'
         word_data = requests.get(api_url).json()
         a = word_data[0]
         b = a['meanings']
@@ -19,7 +19,11 @@ def dictionary():
         d = c['definitions']
         e = d[0]
         f = e['definition']
-        return render_template("dictionary.html", definition=f, defi=defi)
+        #g = e['example']
+        h = d[1]
+        i = h['definition']
+        j = h['example']
+        return render_template("dictionary.html", definition=f, defi=defi, definition_2=i, eg_2=j)
     return render_template("dictionary.html")
 
 @app.route("/<word>")
@@ -30,6 +34,14 @@ def word_test(word):
 @app.route("/calculator")
 def calc():
     return render_template("calculator.html")
+
+@app.route("/unit-converter")
+def converter():
+    return render_template("converter.html")
+
+@app.route("/timer")
+def timer():
+    return render_template("timer.html")
 
 if __name__ == '__main__':
     app.run(debug=True)
