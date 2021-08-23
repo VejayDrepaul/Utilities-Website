@@ -1,10 +1,8 @@
 {% extends "base.html" %}
+<title>{% block title %}Scientific Calculator{% endblock %}</title>
 {% block calculator %}
-    <title>Scientific Calculator</title>
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/calc-style.css') }}">
-    <div class="title">
-        <h1>Calculator</h1>
-    </div>
+    <center><h1>Calculator</h1></center>
     <div class="calculator-style">
             <input class="form-control" id="input-box" type="text" placeholder="Input">
             <input class="form-control" id="result-box" type="text" placeholder="0">
