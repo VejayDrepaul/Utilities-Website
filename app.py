@@ -19,16 +19,13 @@ def dictionary():
         d = c['definitions']
         e = d[0]
         f = e['definition']
-        #g = e['example']
+        g = e['example']
         h = d[1]
         i = h['definition']
         j = h['example']
-        return render_template("dictionary.html", definition=f, defi=defi, definition_2=i, eg_2=j)
-    return render_template("dictionary.html")
 
-@app.route("/<word>")
-def word_test(word):
-    return f"<h1>{word}</h1>"
+        return render_template("dictionary.html", definition=f, defi=defi, definition_2=i, eg=g, eg_2=j)
+    return render_template("dictionary.html")
 
 
 @app.route("/calculator")
@@ -42,6 +39,11 @@ def converter():
 @app.route("/timer")
 def timer():
     return render_template("timer.html")
+
+
+@app.errorhandler(404)
+def page_not_found(e):
+    return render_template('404.html'), 404
 
 if __name__ == '__main__':
     app.run(debug=True)
