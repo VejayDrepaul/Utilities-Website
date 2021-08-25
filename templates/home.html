@@ -1,5 +1,93 @@
 {% extends "base.html" %}
-
 {% block home %}
-    <center><h1>News</h1></center>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles/home-style.css') }}">
+    <center><h1>Bookmarks</h1></center>
+    <div class="tech-table">
+        <table class="table table-striped" >
+            <thead>
+                <tr>
+                    <th scope="col"><h3>#</h3></th>
+                    <th scope="col"><h3>Technology</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><h4>1</h4></th>
+                    <td><a href="https://github.com" target="_blank"><img src="{{ url_for('static', filename='img/github.png') }}" height="35" width="100"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>2</h4></th>
+                    <td><a href="https://gitlab.com" target="_blank"><img src="{{ url_for('static', filename='img/gitlab.png') }}" height="35" width="100"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>3</h4></th>
+                    <td><a href="https://stackoverflow.com" target="_blank"><img src="{{ url_for('static', filename='img/stackoverflow.svg') }}" height="35" width="100"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>4</h4></th>
+                    <td><a href="https://docker.com" target="_blank"><img src="{{ url_for('static', filename='img/docker.png') }}" height="35" width="100"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>5</h4></th>
+                    <td><a href="https://gmail.com" target="_blank"><img src="{{ url_for('static', filename='img/gmail.png') }}" height="45" width="100"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>6</h4></th>
+                    <td><a href="https://youtube.com" target="_blank"><img src="{{ url_for('static', filename='img/youtube.png') }}" height="45" width="100"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>7</h4></th>
+                    <td><a href="https://outlook.com" target="_blank"><img src="{{ url_for('static', filename='img/outlook.png') }}" height="55" width="100"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>8</h4></th>
+                    <td><a href="https://github.com/public-apis/public-apis" target="_blank"><img src="{{ url_for('static', filename='img/apis.png') }}" height="55" width="100">GitHub Free API List</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="news-table">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col"><h3>#</h3></th>
+                    <th scope="col"><h3>News/Business</h3></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"><h4>1</h4></th>
+                    <td><a href="https://wsj.com" target="_blank"><img src="{{ url_for('static', filename='img/wsj.png') }}" height="35" width="200"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>2</h4></th>
+                    <td><a href="https://nytimes.com" target="_blank"><img src="{{ url_for('static', filename='img/nytimes.png') }}" height="35" width="200"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>3</h4></th>
+                    <td><a href="https://newyorker.com" target="_blank"><img src="{{ url_for('static', filename='img/newyorker.svg') }}" height="35" width="200"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>4</h4></th>
+                    <td><a href="https://time.com" target="_blank"><img src="{{ url_for('static', filename='img/time.png') }}" height="35" width="200"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>5</h4></th>
+                    <td><a href="https://bloomberg.com" target="_blank"><img src="{{ url_for('static', filename='img/bloomberg.png') }}" height="45" width="200"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>6</h4></th>
+                    <td><a href="https://morningstar.com" target="_blank"><img src="{{ url_for('static', filename='img/morningstar.svg') }}" height="45" width="200"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>7</h4></th>
+                    <td><a href="https://finance.yahoo.com" target="_blank"><img src="{{ url_for('static', filename='img/yahoofinance.png') }}" height="55" width="200"></a></td>
+                </tr>
+                <tr>
+                    <th scope="row"><h4>8</h4></th>
+                    <td><a href="https://investopedia.com" target="_blank"><img src="{{ url_for('static', filename='img/investopedia.png') }}" height="55" width="200"></a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 {% endblock %}
