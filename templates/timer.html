@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 <title>{% block title %}Timer{% endblock %}</title>
+{% block timer %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles/timer-style.css') }}">
+    <center><h1>Timer</h1></center>
+    <br>
     <div class="timer-style">
-        <input type="text" name="" value="" placeholder="text">
-        <input type="text" name="" value="">
-        <input type="text" name="" value="">
-        <input type="text" name="" value="">
+        <input type="text" id="days" placeholder="Days">
+        <input type="text" id="hours" placeholder="Hours">
+        <input type="text" id="minutes" placeholder="Minutes">
+        <input type="text" id="seconds" placeholder="Seconds">
+        <input type="text" id="milliseconds" placeholder="Milliseconds">
+        <br>
+        <br>
+        <center><button class="btn btn-primary btn-lg" type="button" id="test" onclick="clickMe()">Set Timer</button></center>
     </div>
+    <script type="text/javascript" src="{{ url_for('static', filename='script/timer.js') }}"></script>
+{% endblock %}
