@@ -32,9 +32,6 @@ def dictionary():
 def calc():
     return render_template("calculator.html")
 
-@app.route("/unit-converter")
-def converter():
-    return render_template("converter.html")
 
 @app.route("/timer")
 def timer():
